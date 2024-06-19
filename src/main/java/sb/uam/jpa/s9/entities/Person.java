@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Person {
 
     @Id // Indicamos que es la clave primaria
-    @GeneratedValue // Indicamos que es autoincremental, cada que se inserte un nuevo registro se incrementara
+    // @GeneratedValue // Indicamos que es autoincremental, cada que se inserte un nuevo registro se incrementara
     private Long id;
     // Sí dejamos por defecto el valor de la columna, se tomara el nombre del atributo
     private String name;
@@ -24,6 +24,13 @@ public class Person {
     private String lastname;
     private Integer age;
     private String email;
+
+    // Se añade el constructor para PersonDto
+    public Person(String name, String lastname, String email) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+    }
 
 
 }
