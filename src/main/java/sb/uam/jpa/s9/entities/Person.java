@@ -25,12 +25,27 @@ public class Person {
     private Integer age;
     private String email;
 
-    // Se añade el constructor para PersonDto
-    public Person(String name, String lastname, String email) {
-        this.name = name;
-        this.lastname = lastname;
-        this.email = email;
+    // Usando eventos de ciclo de Vida:
+    // Existen diversas anotaciones que nos permiten manejar el ciclo de vida como las cuales son:
+    // @PrePersist, @PostPersist (Antes y después de persistir)
+    // @PreUpdate, @PostUpdate, (Antes y despues de actualizar)
+    // @PreRemove, @PostRemove, (Antes y despues de eliminar)
+    // @PostLoad (Despues de cargar)
+
+    @PrePersist
+    public void prePersiste(){
+        System.out.println("Antes de persistir");
+
     }
+
+    public void preUpdate(){
+        System.out.println("Antes de actualizar");
+
+    }
+
+
+
+
 
 
 }
